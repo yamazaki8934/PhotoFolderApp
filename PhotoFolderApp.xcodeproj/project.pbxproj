@@ -12,6 +12,7 @@
 		8E1787D0228EB8E300C27E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E1787CF228EB8E300C27E5E /* Assets.xcassets */; };
 		8E1787D3228EB8E300C27E5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1787D1228EB8E300C27E5E /* LaunchScreen.storyboard */; };
 		8E21C0DE228EBC33005B2B0D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E21C0DD228EBC33005B2B0D /* HomeViewController.swift */; };
+		8E21C0E1228F181C005B2B0D /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E21C0E0228F181C005B2B0D /* AddPersonViewController.swift */; };
 		9EFFA957096C7E02E4FC1947 /* Pods_PhotoFolderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728A07CCE9B6929358489A62 /* Pods_PhotoFolderApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		8E1787D2228EB8E300C27E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E1787D4228EB8E300C27E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E21C0DD228EBC33005B2B0D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8E21C0E0228F181C005B2B0D /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
 		925D9B20C689BAEBC326C2D6 /* Pods-PhotoFolderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoFolderApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoFolderApp/Pods-PhotoFolderApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				8E21C0DD228EBC33005B2B0D /* HomeViewController.swift */,
+				8E21C0E0228F181C005B2B0D /* AddPersonViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			files = (
 				8E21C0DE228EBC33005B2B0D /* HomeViewController.swift in Sources */,
 				8E1787C9228EB8DF00C27E5E /* AppDelegate.swift in Sources */,
+				8E21C0E1228F181C005B2B0D /* AddPersonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
