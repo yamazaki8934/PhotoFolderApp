@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iO7-8F-pwe">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Photo Folder-->
+        <scene sceneID="h9L-BX-Suc">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="iO7-8F-pwe" customClass="HomeViewController" customModule="PhotoFolderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n21-2C-dAj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yqK-z0-iue">
+                                <rect key="frame" x="125" y="96" width="125" height="29"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="男性"/>
+                                    <segment title="女性"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lHU-uV-Psx">
+                                <rect key="frame" x="0.0" y="139" width="375" height="528"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeViewCell" id="S13-S7-7Aa">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S13-S7-7Aa" id="MfR-TR-RA0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iO7-8F-pwe" id="0Va-m8-FG5"/>
+                                    <outlet property="delegate" destination="iO7-8F-pwe" id="8hB-pe-ENq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lHU-uV-Psx" firstAttribute="top" secondItem="yqK-z0-iue" secondAttribute="bottom" constant="15" id="4SC-Ug-evt"/>
+                            <constraint firstItem="lHU-uV-Psx" firstAttribute="leading" secondItem="9df-pn-tTA" secondAttribute="leading" id="B1i-Kt-brr"/>
+                            <constraint firstItem="9df-pn-tTA" firstAttribute="trailing" secondItem="lHU-uV-Psx" secondAttribute="trailing" id="M2F-6R-6wP"/>
+                            <constraint firstItem="yqK-z0-iue" firstAttribute="top" secondItem="9df-pn-tTA" secondAttribute="top" constant="32" id="NXw-fq-vSM"/>
+                            <constraint firstItem="yqK-z0-iue" firstAttribute="centerX" secondItem="n21-2C-dAj" secondAttribute="centerX" id="bHP-Eu-4jD"/>
+                            <constraint firstItem="9df-pn-tTA" firstAttribute="bottom" secondItem="lHU-uV-Psx" secondAttribute="bottom" id="euu-fv-DiA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9df-pn-tTA"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Photo Folder" id="26P-vt-aci"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="yqK-z0-iue" id="IVR-lE-yIH"/>
+                        <outlet property="tableView" destination="lHU-uV-Psx" id="iVu-bf-Bgy"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lee-MI-xvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1096.8" y="-231.63418290854574"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rf2-Dc-fDg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LTw-56-A5t" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="98C-d6-s9d">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iO7-8F-pwe" kind="relationship" relationship="rootViewController" id="R5M-MZ-ldh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bhe-8e-0eu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157.59999999999999" y="-231.63418290854574"/>
         </scene>
     </scenes>
 </document>
