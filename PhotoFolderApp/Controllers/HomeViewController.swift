@@ -33,12 +33,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     private func populatePeople() {
         
-        let resource = Resource<PersonResponse>(url: URL(string: "https://8cbe7f88.ngrok.io/api/v1/stars/index")!)
+        let resource = Resource<PersonResponse>(url: URL(string: "https://d4fc521d.ngrok.io/api/v1/stars")!)
         
         URLRequest.load(resource: resource)
             .subscribe(onNext: { personResponse in
                 
                 let people = personResponse.people
+                print(people)
                 self.personListViewModel = PersonListViewModel(people)
                 
                 DispatchQueue.main.async {
@@ -62,5 +63,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             .disposed(by: disposeBag)
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let navC = segue.destination as? UINavigationController,
+            let addVC = navC.viewControllers.first as? AddPersonViewController else {
+                fatalError("Controller not found")
+        }
+        
+        
     }
 }

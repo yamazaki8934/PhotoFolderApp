@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "11995CB335D2F75A0187D43BE25B8A54"
-               BuildableName = "Pods-PhotoFolderApp.framework"
-               BlueprintName = "Pods-PhotoFolderApp"
+               BlueprintIdentifier = "153E2837E88431D2DEBFF70396EBC81C"
+               BuildableName = "SwiftyJSON.framework"
+               BlueprintName = "SwiftyJSON"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

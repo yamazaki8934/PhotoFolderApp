@@ -52,3 +52,8 @@ extension CharacterSet {
         return allowed
     }()
 }
+
+//public protocol Decodable {
+//    init(from decoder: Decoder) throws
+//}
+

@@ -18,6 +18,7 @@
 		8E21C0E8228FB206005B2B0D /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E21C0E7228FB206005B2B0D /* PersonViewModel.swift */; };
 		8E21C0EB228FE288005B2B0D /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E21C0EA228FE288005B2B0D /* URLRequest+Extensions.swift */; };
 		8E21C0EE228FE889005B2B0D /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E21C0ED228FE889005B2B0D /* HomeViewCell.swift */; };
+		8E21C0F122905336005B2B0D /* StockStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E21C0F022905336005B2B0D /* StockStars.swift */; };
 		9EFFA957096C7E02E4FC1947 /* Pods_PhotoFolderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728A07CCE9B6929358489A62 /* Pods_PhotoFolderApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		8E21C0E7228FB206005B2B0D /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 		8E21C0EA228FE288005B2B0D /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
 		8E21C0ED228FE889005B2B0D /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		8E21C0F022905336005B2B0D /* StockStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockStars.swift; sourceTree = "<group>"; };
 		925D9B20C689BAEBC326C2D6 /* Pods-PhotoFolderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoFolderApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoFolderApp/Pods-PhotoFolderApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 		8E1787C7228EB8DF00C27E5E /* PhotoFolderApp */ = {
 			isa = PBXGroup;
 			children = (
+				8E21C0EF22905309005B2B0D /* API */,
 				8E21C0EC228FE867005B2B0D /* Cells */,
 				8E21C0E9228FE265005B2B0D /* Extensions */,
 				8E21C0E6228FB1BD005B2B0D /* View Models */,
@@ -144,6 +147,14 @@
 				8E21C0ED228FE889005B2B0D /* HomeViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		8E21C0EF22905309005B2B0D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				8E21C0F022905336005B2B0D /* StockStars.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +238,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -235,6 +247,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -271,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E21C0DE228EBC33005B2B0D /* HomeViewController.swift in Sources */,
+				8E21C0F122905336005B2B0D /* StockStars.swift in Sources */,
 				8E1787C9228EB8DF00C27E5E /* AppDelegate.swift in Sources */,
 				8E21C0E3228FAEA2005B2B0D /* Person.swift in Sources */,
 				8E21C0E8228FB206005B2B0D /* PersonViewModel.swift in Sources */,
