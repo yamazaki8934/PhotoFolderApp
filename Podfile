@@ -8,4 +8,5 @@ target 'PhotoFolderApp' do
   # Pods for PhotoFolderApp
   pod 'RxSwift','~> 4.0'
   pod 'RxCocoa','~> 4.0'
+  pod 'Alamofire'
 end

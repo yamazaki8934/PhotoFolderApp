@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iO7-8F-pwe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LTw-56-A5t">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,13 +30,25 @@
                                 <rect key="frame" x="0.0" y="139" width="375" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeViewCell" id="S13-S7-7Aa">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeViewCell" id="S13-S7-7Aa" customClass="HomeViewCell" customModule="PhotoFolderApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S13-S7-7Aa" id="MfR-TR-RA0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljb-Z9-ITO">
+                                                    <rect key="frame" x="15" y="0.0" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="Ljb-Z9-ITO" id="d0F-7C-1Ut"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -56,7 +68,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9df-pn-tTA"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Photo Folder" id="26P-vt-aci"/>
+                    <navigationItem key="navigationItem" title="Photo Folder" id="26P-vt-aci">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sKX-8n-0Jk">
+                            <connections>
+                                <segue destination="S8f-48-3mS" kind="presentation" id="hdz-I4-7E1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="segmentedControl" destination="yqK-z0-iue" id="IVR-lE-yIH"/>
                         <outlet property="tableView" destination="lHU-uV-Psx" id="iVu-bf-Bgy"/>
@@ -65,6 +83,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lee-MI-xvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1096.8" y="-231.63418290854574"/>
+        </scene>
+        <!--Add people you like-->
+        <scene sceneID="L8U-ez-rjn">
+            <objects>
+                <viewController id="CZo-ro-3xM" customClass="AddPersonViewController" customModule="PhotoFolderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w67-zz-FiI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CcF-Uk-59L">
+                                <rect key="frame" x="87.5" y="318.5" width="200" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="GgP-V2-0ug"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CcF-Uk-59L" firstAttribute="centerX" secondItem="w67-zz-FiI" secondAttribute="centerX" id="HkH-EL-IOw"/>
+                            <constraint firstItem="CcF-Uk-59L" firstAttribute="centerY" secondItem="w67-zz-FiI" secondAttribute="centerY" id="Tmf-c8-8aa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="czF-Ih-kp4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add people you like" id="Tv4-qy-K2V">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="VWl-om-VzY">
+                            <connections>
+                                <action selector="save" destination="CZo-ro-3xM" id="fKj-MM-rxE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="CcF-Uk-59L" id="THl-57-soY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sUS-Zy-eK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2486" y="-232"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rf2-Dc-fDg">
@@ -82,7 +141,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bhe-8e-0eu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157.59999999999999" y="-231.63418290854574"/>
+            <point key="canvasLocation" x="374" y="-232"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mLv-sQ-x5C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S8f-48-3mS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sjt-5I-lXm">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CZo-ro-3xM" kind="relationship" relationship="rootViewController" id="ohi-5E-gYW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DBy-9u-X39" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1757.5999999999999" y="-235.23238380809596"/>
         </scene>
     </scenes>
 </document>
