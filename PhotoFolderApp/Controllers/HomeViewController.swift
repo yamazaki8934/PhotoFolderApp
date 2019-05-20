@@ -8,11 +8,16 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+import Alamofire
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
+    
+    // .nextだけ流せるので、.error, .completedが流れてこないのを保証できる。.nextイベントを流すにはacceptを使う。初期値をvalueとしてもつ。
+    private var people = BehaviorRelay<[Person]>(value: [])
     
     let disposeBag = DisposeBag()
     private var personListViewModel: PersonListViewModel!
@@ -32,20 +37,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private func populatePeople() {
-        
-        let resource = Resource<PersonResponse>(url: URL(string: "https://d4fc521d.ngrok.io/api/v1/stars")!)
-        
+                
+        let resource = Resource<PersonResponse>(url: URL(string: "https://0acae4f9.ngrok.io/api/v1/stars")!)
+
         URLRequest.load(resource: resource)
+            // onNextがないと流すものがないから呼ばれない
             .subscribe(onNext: { personResponse in
-                
+
                 let people = personResponse.people
-                print(people)
                 self.personListViewModel = PersonListViewModel(people)
-                
+
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-                
+
             }).disposed(by: disposeBag)
         
     }
@@ -72,6 +77,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 fatalError("Controller not found")
         }
         
-        
+        addVC.personSubjectObsevable
+            .subscribe(onNext: { person in
+                
+                var existingPeople = self.people.value
+                existingPeople.append(person)
+                self.people.accept(existingPeople)
+                
+            }).disposed(by: disposeBag)
     }
 }

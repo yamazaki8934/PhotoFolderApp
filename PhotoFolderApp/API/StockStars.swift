@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 
+
 class StockStars: NSObject {
     
     // 保存ボタンが押されたときに呼ばれるメソッドを定義
@@ -19,7 +20,7 @@ class StockStars: NSObject {
         ]
         
         // HTTP通信
-        Alamofire.request("https://d4fc521d.ngrok.io/api/v1/stars",
+        Alamofire.request("https://0acae4f9.ngrok.io/api/v1/stars",
                           method: .post,
                           parameters: params,
                           encoding: JSONEncoding.default)
@@ -32,7 +33,7 @@ class StockStars: NSObject {
     }
     
     class func getStars() {
-        Alamofire.request("https://d4fc521d.ngrok.io/api/v1/stars",
+        Alamofire.request("https://0acae4f9.ngrok.io/api/v1/stars",
                           method: .get)
             .responseJSON { response in
                 

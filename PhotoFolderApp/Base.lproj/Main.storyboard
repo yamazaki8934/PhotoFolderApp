@@ -114,7 +114,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="VWl-om-VzY">
                             <connections>
                                 <action selector="save" destination="CZo-ro-3xM" id="fKj-MM-rxE"/>
-                                <segue destination="LTw-56-A5t" kind="presentation" id="K3a-kW-np0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

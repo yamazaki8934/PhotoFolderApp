@@ -12,18 +12,6 @@ struct PersonResponse: Decodable {
     let people: [Person]
 }
 
-extension PersonResponse: Decodable {
-    init(from decoder: Decoder) throws {
-        var people: [Person] = []
-        var unkeyedContainer = try decoder.unkeyedContainer()
-        while !unkeyedContainer.isAtEnd {
-            let person = try unkeyedContainer.decode(Person.self)
-            people.append(person)
-        }
-        self.init(users: people)
-    }
-}
-
 struct Person: Decodable {
     let name: String
 }
